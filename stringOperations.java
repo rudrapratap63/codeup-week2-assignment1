@@ -68,7 +68,7 @@ public class stringOperations {
                     combinationCount=0;
                     finalResult += "[";
                     System.out.println("Total Combinations :- ");
-                    
+
                     for (int length = 1; length <= characterInputs.length; length++) {
                         generateStrings(characterInputs, result, 0, used, length);
                     }
@@ -257,7 +257,10 @@ public class stringOperations {
             series = input.nextLine();
             if (inputArray.isEmpty() || series.isEmpty() || !isValidInput(inputArray) || !isValidSeries(series)) {
                 System.out.println("Invalid input. Please enter only single-digit positive integers.");
-            }else{
+            }else if(series.length()>inputArray.length()){
+                System.out.println("Series length must be less than array of digits");
+            }
+            else{
                 break;
             }
         }
